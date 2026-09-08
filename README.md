@@ -31,24 +31,7 @@ The relational model contains six connected entities:
 * **Payment Transaction:** Payments associated with tasks
 * **Rating:** Customer feedback for completed work
 
-  <img width="473" height="302" alt="image" src="https://github.com/user-attachments/assets/a78ec131-6e75-47ac-a39f-87f6ba206c8f" />
-
-
-```mermaid
-erDiagram
-    CUSTOMER ||--o{ TASK : posts
-    CUSTOMER ||--o{ PAYMENT_TRANSACTION : makes
-    CUSTOMER ||--o{ RATING : provides
-
-    TASK ||--o{ BID : receives
-    TASK ||--o{ PAYMENT_TRANSACTION : generates
-    TASK ||--o| RATING : receives
-
-    TRADESPERSON ||--o{ BID : submits
-    TRADESPERSON ||--o{ RATING : receives
-
-    BID ||--o| RATING : supports
-```
+ ![Pro App ERD Diagram](pro-app-erd-diagram(1).png)
 
 Primary keys identify each record, while foreign keys preserve the relationships between customers, tasks, bids, payments and ratings. Additional validation constraints prevent negative amounts, unsupported status values, invalid ratings and inconsistent customer-task combinations.
 
